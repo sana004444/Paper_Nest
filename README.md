@@ -1,6 +1,6 @@
 # 📄 Paper Nest
 
-**Paper Nest** is a mini research paper submission web app inspired by EasyChair, developed by a student of **CUST University**. It allows authors to register, submit research papers with complete metadata, and manage their submissions. The system also supports reviewer and chair (admin) roles.
+**Paper Nest** is a mini research paper submission web app inspired by EasyChair. It allows authors to register, submit research papers with complete metadata, and manage their submissions. The system also supports reviewer and chair (admin) roles.
 
 ---
 
