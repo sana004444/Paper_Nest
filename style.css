@@ -1,75 +1,75 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card, .dashboard-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.logo {
+  display: block;
+  max-width: 80px;
+  margin: 0 auto 20px auto;
+}
+
+h2 {
   text-align: center;
-  padding: 40px;
-  background-color: #f2f2f2;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
+  width: 100%;
+  padding: 12px;
+  background-color: #2c3e50;
   color: white;
   border: none;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-#formContainer {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  border-radius: 10px;
+button:hover {
+  background-color: #1a252f;
 }
 
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-#successMessage {
-  margin-top: 20px;
-  color: green;
-  font-weight: bold;
-  display: none;
-}
-
-.hidden {
-  display: none;
-}
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 40px;
-  background-color: #f2f2f2;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#formContainer {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  border-radius: 10px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+label {
+  font-weight: 500;
+  color: #333;
 }
