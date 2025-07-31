@@ -2,85 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paper Nest - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paper Nest - Conference Management</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .inline-radio {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .inline-radio label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #f1f1f1;
-      padding: 8px 12px;
-      border-radius: 6px;
-    }
-    .agreement-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      background: #f1f1f1;
-      padding: 10px 12px;
-      border-radius: 6px;
-    }
-  </style>
 </head>
 <body>
-  <div class="container" id="login-screen">
-    <div class="login-card">
-      <img src="Custlogo.png" alt="CUST Logo" class="logo" />
-      <h2>Paper Nest - Login</h2>
-      <form id="login-form">
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        <select required>
-          <option value="">Select Role</option>
-          <option value="author">Author</option>
-        </select>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+  <div id="login-screen" class="card">
+    <img src="Custlogo.png" alt="Logo" class="logo" />
+    <h2>Login to Paper Nest</h2>
+    <form id="login-form">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <select id="role" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="author">Author</option>
+        <option value="reviewer">Reviewer</option>
+        <option value="chair">Chair</option>
+      </select>
+      <button type="submit">Login</button>
+    </form>
   </div>
 
-  <div class="container" id="author-dashboard" style="display: none">
-    <div class="dashboard-card">
-      <h2>Author Submission Form</h2>
-      <form id="submission-form">
-        <label for="title">Paper Title</label>
-        <input type="text" id="title" required />
+  <!-- AUTHOR DASHBOARD -->
+  <div id="author-dashboard" class="card hidden">
+    <h2>Author Dashboard</h2>
+    <form>
+      <input type="text" placeholder="Paper Title" required />
+      <textarea placeholder="Abstract" required></textarea>
+      <input type="text" placeholder="Author Names" required />
+      <input type="email" placeholder="Author Emails" required />
+      <select required>
+        <option disabled selected>Select Corresponding Author</option>
+        <option>Author 1</option>
+        <option>Author 2</option>
+      </select>
+      <input type="file" accept=".pdf" required />
+      <label>Topics:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" required /> AI</label>
+        <label><input type="checkbox" required /> ML</label>
+        <label><input type="checkbox" required /> Networking</label>
+      </div>
+      <label><input type="checkbox" required /> I agree to the terms of submission</label>
+      <button type="submit">Submit Paper</button>
+    </form>
+  </div>
 
-        <label for="abstract">Abstract</label>
-        <textarea id="abstract" rows="4" required></textarea>
+  <!-- REVIEWER DASHBOARD -->
+  <div id="reviewer-dashboard" class="card hidden">
+    <h2>Reviewer Dashboard</h2>
+    <form>
+      <input type="text" placeholder="Paper Title (readonly)" readonly />
+      <textarea placeholder="Your Comments to Author" required></textarea>
+      <label>Overall Score:</label>
+      <select required>
+        <option disabled selected>Select Score</option>
+        <option value="5">Excellent</option>
+        <option value="4">Good</option>
+        <option value="3">Fair</option>
+        <option value="2">Poor</option>
+        <option value="1">Reject</option>
+      </select>
+      <label>Technical Quality:</label>
+      <select required>
+        <option disabled selected>Select Rating</option>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+      </select>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
 
-        <label for="authors">Author Name(s)</label>
-        <input type="text" id="authors" required />
+  <!-- CHAIR DASHBOARD -->
+  <div id="chair-dashboard" class="card hidden">
+    <h2>Chair Dashboard</h2>
 
-        <label for="emails">Author Email(s)</label>
-        <input type="email" id="emails" required />
+    <div class="chair-section">
+      <h3>Assign Reviewers</h3>
+      <table class="center-table">
+        <tr><th>Paper</th><th>Assign Reviewer</th></tr>
+        <tr><td>Paper 1</td><td><select><option>Reviewer A</option><option>Reviewer B</option></select></td></tr>
+      </table>
+    </div>
 
-        <label>Corresponding Author</label>
-        <div class="inline-radio">
-          <label><input type="radio" name="corresponding" required /> Yes</label>
-          <label><input type="radio" name="corresponding" /> No</label>
-        </div>
+    <div class="chair-section">
+      <h3>View Reviews</h3>
+      <table class="center-table">
+        <tr><th>Paper</th><th>Score</th><th>Comments</th></tr>
+        <tr><td>Paper 1</td><td>4</td><td>Well written</td></tr>
+      </table>
+    </div>
 
-        <label for="paper-upload">Upload Paper (PDF only)</label>
-        <input type="file" id="paper-upload" accept="application/pdf" required />
+    <div class="chair-section">
+      <h3>Make Decisions</h3>
+      <table class="center-table">
+        <tr><th>Paper</th><th>Decision</th></tr>
+        <tr><td>Paper 1</td>
+          <td>
+            <select>
+              <option>Accept</option>
+              <option>Reject</option>
+              <option>Revise</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-        <div class="agreement-group">
-          <input type="checkbox" required />
-          <span>I agree to the submission terms and conditions</span>
-        </div>
-
-        <button type="submit">Submit Paper</button>
+    <div class="chair-section">
+      <h3>Notify Authors</h3>
+      <form>
+        <input type="text" placeholder="Author Email" required />
+        <textarea placeholder="Notification Message" required></textarea>
+        <button type="submit">Send Notification</button>
       </form>
     </div>
   </div>
