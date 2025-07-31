@@ -1,13 +1,14 @@
 document.getElementById("login-form").addEventListener("submit", function (e) {
   e.preventDefault();
+  const role = document.getElementById("role").value;
 
-  // Simulate successful login
-  document.getElementById("login-screen").style.display = "none";
-  document.getElementById("author-dashboard").style.display = "flex";
-});
+  document.getElementById("login-screen").classList.add("hidden");
 
-document.getElementById("submission-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Paper submitted successfully!");
-  this.reset(); // Clear the form after submission
+  if (role === "author") {
+    document.getElementById("author-dashboard").classList.remove("hidden");
+  } else if (role === "reviewer") {
+    document.getElementById("reviewer-dashboard").classList.remove("hidden");
+  } else if (role === "chair") {
+    document.getElementById("chair-dashboard").classList.remove("hidden");
+  }
 });
