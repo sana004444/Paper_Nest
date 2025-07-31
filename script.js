@@ -1,13 +1,13 @@
-function showForm() {
-  document.getElementById("formContainer").style.display = "block";
-}
+document.getElementById("login-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-document.getElementById("uploadForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Stop real form submission
+  // Simulate successful login
+  document.getElementById("login-screen").style.display = "none";
+  document.getElementById("author-dashboard").style.display = "flex";
+});
 
-  // Show success message
-  document.getElementById("successMessage").style.display = "block";
-
-  // Optionally, hide the form after submission
-  // document.getElementById("formContainer").style.display = "none";
+document.getElementById("submission-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Paper submitted successfully!");
+  this.reset(); // Clear the form after submission
 });
