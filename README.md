@@ -1,6 +1,6 @@
-# 📄 Paper Nest
+# 📄Cust Research Desk
 
-**Paper Nest** is a research paper submission web application modeled after EasyChair. It allows authors to submit academic work, reviewers to evaluate submissions, and chairs to manage the review process and decisions.
+**Cust Research Desk** is a research paper submission web application modeled after EasyChair. It allows authors to submit academic work, reviewers to evaluate submissions, and chairs to manage the review process and decisions.
 
 ---
 
